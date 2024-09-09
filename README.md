@@ -36,7 +36,7 @@ python3 main.py
 
 ## TODO (features incoming)
 
-* implement moves
+* implement moves (remain L, F, D, DL, DR, AL, AR, BL, BR, B)
 * implement scramble
-* implement solve features / helpers
-* implement solve
+* implement solver features / helpers
+* implement solver
