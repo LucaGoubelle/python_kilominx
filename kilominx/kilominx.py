@@ -43,7 +43,7 @@ class Kilominx:
             down_left=["blue" for _ in  range(5)],
             down_right=["red" for _ in  range(5)],
             abs_left=["yellow" for _ in  range(5)],
-            abs_right=["green" for _ in  range(5)],
+            abs_right=["darkgreen" for _ in  range(5)],
             back_left=["orange" for _ in  range(5)],
             back_right=["cyan" for _ in  range(5)],
             back=["purple" for _ in  range(5)],

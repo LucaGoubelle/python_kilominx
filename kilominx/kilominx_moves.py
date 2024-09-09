@@ -1,3 +1,4 @@
+import copy
 from kilominx.kilominx_rotate_utils import RotateUtils
 
 
@@ -31,4 +32,36 @@ def move_U(minx):
 def move_U_prime(minx):
     for _ in range(4):
         minx = move_U(minx)
+    return minx
+
+
+''' move Right face '''
+def move_R(minx):
+    minx.right = RotateUtils.rotate(minx.right)
+    
+    front_copy = copy.deepcopy(minx.front)
+    dr_copy = copy.deepcopy(minx.down_right)
+    ar_copy = copy.deepcopy(minx.abs_right)
+    br_copy = copy.deepcopy(minx.back_right)
+    up_copy = copy.deepcopy(minx.up)
+    
+    new_up = ['', front_copy[1], front_copy[2], '', '']
+    new_front = ['', dr_copy[0], dr_copy[1], '', '']
+    new_down_right = [ar_copy[4], ar_copy[0], '', '', '']
+    new_abs_right = [br_copy[0], '', '', '', br_copy[4]]
+    new_back_right = [up_copy[2], '', '', '', up_copy[1]]
+    
+    minx.up = RotateUtils.transfert(minx.up, new_up)
+    minx.front = RotateUtils.transfert(minx.front, new_front)
+    minx.down_right = RotateUtils.transfert(minx.down_right, new_down_right)
+    minx.abs_right = RotateUtils.transfert(minx.abs_right, new_abs_right)
+    minx.back_right = RotateUtils.transfert(minx.back_right, new_back_right)
+    
+    return minx
+
+
+''' move Right face reverse '''
+def move_R_prime(minx):
+    for _ in range(4):
+        minx = move_R(minx)
     return minx
