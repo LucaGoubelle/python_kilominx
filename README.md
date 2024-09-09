@@ -37,6 +37,7 @@ python3 main.py
 ## TODO (features incoming)
 
 * implement moves (remain L, F, D, DL, DR, AL, AR, BL, BR, B)
+* implement axis moves (y, z)
 * implement scramble
 * implement solver features / helpers
 * implement solver
