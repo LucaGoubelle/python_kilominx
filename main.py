@@ -4,6 +4,7 @@ import pygame
 
 from kilominx.kilominx import Kilominx
 from kilominx.kilominx_drawer import KilominxDrawer
+from kilominx.kilominx_moves import *
 
 # --- pygame init -----------------------
 pygame.init()
@@ -25,6 +26,11 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_k:
+                minx = move_U(minx)
+            if event.key == pygame.K_m:
+                minx = move_U_prime(minx)
             
     screen.fill(BGCOLOR)
     # ---------- graphics stuffs here -----------------
