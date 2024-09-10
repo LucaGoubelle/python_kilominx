@@ -35,6 +35,10 @@ while True:
                 minx = move_R(minx)
             if event.key == pygame.K_l:
                 minx = move_R_prime(minx)
+            if event.key == pygame.K_s:
+                minx = move_L(minx)
+            if event.key == pygame.K_z:
+                minx = move_L_prime(minx)
             
     screen.fill(BGCOLOR)
     # ---------- graphics stuffs here -----------------
