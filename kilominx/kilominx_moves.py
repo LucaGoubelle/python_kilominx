@@ -97,3 +97,35 @@ def move_L_prime(minx):
     for _ in range(4):
         minx = move_L(minx)
     return minx
+
+
+''' move Front face '''
+def move_F(minx):
+    minx.front = RotateUtils.rotate(minx.front)
+    
+    u_copy = copy.deepcopy(minx.up)
+    l_copy = copy.deepcopy(minx.left)
+    r_copy = copy.deepcopy(minx.right)
+    dl_copy = copy.deepcopy(minx.down_left)
+    dr_copy = copy.deepcopy(minx.down_right)
+    
+    new_up = ['','',l_copy[1],l_copy[2],'']
+    new_left = ['',dl_copy[0],dl_copy[1],'','']
+    new_right = [u_copy[3],'','','',u_copy[2]]
+    new_down_left = [dr_copy[4],dr_copy[0],'','','']
+    new_down_right = [r_copy[0],'','','',r_copy[4]]
+    
+    minx.up = RotateUtils.transfert(minx.up, new_up)
+    minx.left = RotateUtils.transfert(minx.left, new_left)
+    minx.right = RotateUtils.transfert(minx.right, new_right)
+    minx.down_left = RotateUtils.transfert(minx.down_left, new_down_left)
+    minx.down_right = RotateUtils.transfert(minx.down_right, new_down_right)
+    
+    return minx
+
+
+''' move Front face reverse '''
+def move_F_prime(minx):
+    for _ in range(4):
+        minx = move_F(minx)
+    return minx
