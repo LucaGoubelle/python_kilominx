@@ -5,6 +5,7 @@ import pygame
 from kilominx.kilominx import Kilominx
 from kilominx.kilominx_drawer import KilominxDrawer
 from kilominx.kilominx_moves import *
+from kilominx.kilominx_axis_moves import *
 
 # --- pygame init -----------------------
 pygame.init()
@@ -43,6 +44,11 @@ while True:
                 minx = move_F(minx)
             if event.key == pygame.K_f:
                 minx = move_F_prime(minx)
+
+            if event.key == pygame.K_LEFT:
+                minx = move_y(minx)
+            if event.key == pygame.K_RIGHT:
+                minx = move_y_prime(minx)
             
     screen.fill(BGCOLOR)
     # ---------- graphics stuffs here -----------------

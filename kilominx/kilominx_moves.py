@@ -129,3 +129,27 @@ def move_F_prime(minx):
     for _ in range(4):
         minx = move_F(minx)
     return minx
+
+
+''' move Down Left face '''
+def move_DL(minx):
+    return minx
+
+
+''' move Down Left face reverse '''
+def move_DL_prime(minx):
+    for _ in range(4):
+        minx = move_DL(minx)
+    return minx
+
+
+''' move Down Right face '''
+def move_DR(minx):
+    return minx
+
+
+''' move Down Right face reverse '''
+def move_DR_prime(minx):
+    for _ in range(4):
+        minx = move_DL(minx)
+    return minx
