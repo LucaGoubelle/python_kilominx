@@ -4,8 +4,7 @@ import pygame
 
 from kilominx.kilominx import Kilominx
 from kilominx.kilominx_drawer import KilominxDrawer
-from kilominx.kilominx_moves import *
-from kilominx.kilominx_axis_moves import *
+from kilominx.kilominx_event_handler import KilominxEventHandler as Evt
 
 # --- pygame init -----------------------
 pygame.init()
@@ -28,27 +27,8 @@ while True:
             pygame.quit()
             sys.exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_k:
-                minx = move_U(minx)
-            if event.key == pygame.K_m:
-                minx = move_U_prime(minx)
-            if event.key == pygame.K_o:
-                minx = move_R(minx)
-            if event.key == pygame.K_l:
-                minx = move_R_prime(minx)
-            if event.key == pygame.K_s:
-                minx = move_L(minx)
-            if event.key == pygame.K_z:
-                minx = move_L_prime(minx)
-            if event.key == pygame.K_j:
-                minx = move_F(minx)
-            if event.key == pygame.K_f:
-                minx = move_F_prime(minx)
-
-            if event.key == pygame.K_LEFT:
-                minx = move_y(minx)
-            if event.key == pygame.K_RIGHT:
-                minx = move_y_prime(minx)
+            minx = Evt.handle_moves(event, minx)
+            minx = Evt.handle_axis_moves(event, minx)
             
     screen.fill(BGCOLOR)
     # ---------- graphics stuffs here -----------------
