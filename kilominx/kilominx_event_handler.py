@@ -31,6 +31,10 @@ class KilominxEventHandler:
             minx = move_DL(minx)
         if event.key == pygame.K_q:
             minx = move_DL_prime(minx)
+        if event.key == pygame.K_n:
+            minx = move_DR(minx)
+        if event.key == pygame.K_c:
+            minx = move_DR_prime(minx)
         return minx
     
 
