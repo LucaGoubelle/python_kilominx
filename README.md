@@ -36,6 +36,7 @@ python3 main.py
 
 ## TODO (features incoming)
 
+* add text helper for moves
 * implement moves (remain D, AL, AR, BL, BR, B)
 * implement axis moves (remain z)
 * implement scramble
