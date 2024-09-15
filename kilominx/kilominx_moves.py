@@ -133,6 +133,26 @@ def move_F_prime(minx):
 
 ''' move Down Left face '''
 def move_DL(minx):
+    minx.down_left = RotateUtils.rotate(minx.down_left)
+    
+    f_copy = copy.deepcopy(minx.front)
+    l_copy = copy.deepcopy(minx.left)
+    dr_copy = copy.deepcopy(minx.down_right)
+    d_copy = copy.deepcopy(minx.down)
+    al_copy = copy.deepcopy(minx.abs_left)
+    
+    new_front = ['','','',l_copy[2], l_copy[3]]
+    new_left = ['','',al_copy[1], al_copy[2],'']
+    new_down_right = ['','','',f_copy[3], f_copy[4]]
+    new_down = [dr_copy[4], '', '', '', dr_copy[3]]
+    new_abs_left = ['',d_copy[4], d_copy[0], '', '']
+    
+    minx.front = RotateUtils.transfert(minx.front, new_front)
+    minx.left = RotateUtils.transfert(minx.left, new_left)
+    minx.down_right = RotateUtils.transfert(minx.down_right, new_down_right)
+    minx.down = RotateUtils.transfert(minx.down, new_down)
+    minx.abs_left = RotateUtils.transfert(minx.abs_left, new_abs_left)
+    
     return minx
 
 
