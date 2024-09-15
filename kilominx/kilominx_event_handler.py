@@ -1,7 +1,8 @@
 """ event handler """
 import pygame
-from kilominx.kilominx_moves import *
-from kilominx.kilominx_axis_moves import *
+
+from kilominx.moves.kilominx_moves import *
+from kilominx.moves.kilominx_axis_moves import *
 
 
 class KilominxEventHandler:

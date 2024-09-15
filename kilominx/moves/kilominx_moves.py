@@ -1,5 +1,6 @@
 import copy
-from kilominx.kilominx_rotate_utils import RotateUtils
+
+from kilominx.moves.kilominx_rotate_utils import RotateUtils
 
 
 ''' move Up face '''
